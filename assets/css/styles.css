@@ -1,0 +1,752 @@
+:root {
+    --bs-text-gray-500: #636674;
+    --bs-text-gray-600: #979797; 
+    --bs-text-gray-700: #9A9CAE;
+    --bs-text-gray-800: #B5B7C8;
+
+    --bs-text-green-1:#17C653;
+
+    --bs-text-primary: #062A8F;
+
+    --bs-danger: #F8285A;    
+    --bs-danger-inverse: #ffffff;
+
+    --eq-green-1:#3CD856;
+    --eq-blue-1:#0095FF;
+    --eq-blue-2:#062A8F;
+    --eq-red-1:#FA5A7D;  
+    --eq-gray-color-1: #D9D9D9; 
+    --eq-gray-color-2: #979797; 
+    --eq-gray-color-3: #F5F5F5; 
+    
+    --eq-border-radius: 1rem;    
+    --eq--button-border-radius:0.5rem;
+    
+}
+
+
+[data-bs-theme=light] {    
+    /*Card*/
+    --bs-app-card-bg: #fff;
+    --bs-app-card-box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.03);
+    --bs-app-card-border-color: #F1F1F4;
+    
+    /*Background*/
+    --li-app-bg-color: #F4F7FE;
+    --li-app-main-bg-color: #fff;
+
+    /*Header*/
+    --bs-app-header-base-bg-color: #fff;
+    --bs-app-header-base-box-shadow: 0px 10px 30px 0px rgba(82, 63, 105, 0.05);
+
+    /*Buttons*/
+    --eq-primary-button-color:#fff;
+    --eq-primary-button-bg-color:#062A8F;
+
+    --eq-secondary-button-color:#fff;
+    --eq-secondary-button-bg-color:#979797;
+
+    /*Menu*/
+    --bs-menu-dropdown-bg-color: #fff; 
+    --bs-menu-dropdown-box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.15);
+    --bs-dropdown-active-color:#062A8F;
+    --bs-dropdown-active-bg:#F1FAFF;
+    --bs-btn-bg-color: #F5F5F5;
+
+    /*Sidebar*/
+    --bs-app-sidebar-link-color: #707070;
+    --bs-app-sidebar-icon-color: #062A8F;
+    --bs-app-sidebar-base-bg-color: #fff;
+    --bs-app-sidebar-active-color:#062A8F;
+    --bs-app-sidebar-active-bg-color:#F5F5F5;
+
+    /*Footer*/
+    --bs-app-footer-base-bg-color: #fff;
+    --bs-app-footer-base-box-shadow: 0px 10px 30px 0px rgba(82, 63, 105, 0.05);
+
+    /*Titles*/
+    --eq-subtitle-text-color:#062A8F;
+
+    /*Card Amount*/
+    --eq-card-amount-active-text-color:#062A8F;
+
+    /*Accordion*/
+    --eq-accordion-button-bg-color:#F5F5F5;
+    --eq-accordion-button-text-color:#979797;
+    --eq-accordion-button-active-text-color:#062A8F;
+    --eq-accordion-active-text-color:#062A8F;
+    --eq-accordion-active-bg-color:#F5F5F5;
+    
+
+ 
+}
+
+[data-bs-theme=dark] {
+    /*Card*/
+    --bs-app-card-bg: #25282f;
+    --bs-app-card-box-shadow: none;
+    --bs-app-card-border-color: #1E2027;
+
+    /*Background*/
+    --li-app-bg-color: #0e131a;
+
+    /*Header*/
+    --bs-app-header-base-bg-color: #25282f;
+    --bs-app-header-base-box-shadow: none;
+
+    /*Buttons*/
+    --eq-primary-button-color:#A3AED0;
+    --eq-primary-button-bg-color:#3c3f45;
+
+    --eq-secondary-button-color:#fff;
+    --eq-secondary-button-bg-color:#1B84FF;
+
+    /*Menu*/
+    --bs-menu-dropdown-bg-color: #1d1f27;
+    --bs-menu-dropdown-box-shadow: none; 
+    --bs-dropdown-active-color:#A3AED0;
+    --bs-dropdown-active-bg:#363843;
+    --bs-btn-bg-color: #363843;
+
+    /*Sidebar*/
+    --bs-app-sidebar-link-color: #A3AED0;
+    --bs-app-sidebar-icon-color: #1b81f8;
+    --bs-app-sidebar-base-bg-color: #25282f;
+    --bs-app-sidebar-active-color:#fff;
+    --bs-app-sidebar-active-bg-color:#1B84FF;
+
+    /*Footer*/
+    --bs-app-footer-base-bg-color: #25282f;
+    --bs-app-footer-base-box-shadow: none;
+
+    /*Titles*/
+    --eq-subtitle-text-color:#979797;
+
+    /*Card Amount*/
+    --eq-card-amount-active-text-color:#0095ff;
+
+    /*Accordion*/
+    --eq-accordion-button-bg-color:#3c3f45;
+    --eq-accordion-button-text-color:#979797;
+    --eq-accordion-button-active-text-color:#0095ff;
+    --eq-accordion-active-text-color:#0095ff;
+    --eq-accordion-active-bg-color:#3c3f45;
+
+
+}
+
+[data-bs-theme=light] .theme-dark-show, 
+[data-bs-theme=dark] .theme-light-show {
+    display: none !important;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background-color: var(--li-app-bg-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+}
+
+.content-wrapper {
+    display: flex;
+  min-height: 100vh;
+}
+
+.right-area {
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+}
+
+.offcanvas-md {
+    --bs-offcanvas-width: 245px;
+}
+
+.navbar {
+    min-height: 60px;
+    background-color: var(--bs-app-header-base-bg-color);
+}
+
+.navbar-logo {
+    padding: 0 1rem;
+}
+
+.navbar-logo img {
+    max-height: 25px;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.app-navbar {
+    display: flex;
+    align-items: stretch;
+}
+
+.app-navbar .app-navbar-item {
+    display: flex;
+    align-items: center;
+}
+
+.app-navbar i {
+    font-size: 1.1rem !important;
+}
+
+/*-----------------------------*/
+/*  Fonts Sizes
+/*-----------------------------*/
+.fs-base {
+    font-size: 1rem !important;
+}
+
+.fs-1 {
+    font-size: 1.8rem !important;
+}
+
+.fs-2 {
+    font-size: 1.2rem !important;
+}
+
+/*-----------------------------*/
+/*  Bootstrap Icon Fonts
+/*-----------------------------*/
+.bi {
+    display: inline-block;
+}  
+
+/*-----------------------------*/
+/*  Display Sizes
+/*-----------------------------*/
+.h-15px {
+    height: 15px !important;
+}
+
+.w-15px {
+    width: 15px !important;
+}
+
+.h-35px {
+    height: 35px !important;
+}
+
+.w-35px {
+    width: 35px !important;
+}
+
+/*-----------------------------*/
+/*  Titles
+/*-----------------------------*/
+.subtitle {    
+    font-weight: 600;
+    color: var(--eq-subtitle-text-color);
+}
+
+/*-----------------------------*/
+/*  Buttons
+/*-----------------------------*/
+.btn {
+    padding: 0.55rem 1rem;
+}
+
+.btn.btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.btn i {
+    color: var(--bs-text-gray-600);
+}
+
+.btn:hover{
+    background-color: var(--eq-gray-color-3) !important;
+}
+
+.btn:hover, .btn:hover i {
+    color: var(--bs-text-primary);
+}
+
+.btn > i {
+    display: inline-flex;
+    font-size: 1rem;
+    vertical-align: middle;   
+}
+
+.btn .badge {
+    font-size: 0.65rem;
+}
+
+.btn .badge-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    min-width: unset;
+    margin-left: -0.6rem !important;
+    margin-top: 0.6rem !important;
+    color: var(--bs-danger-inverse);
+    background-color: var(--bs-text-green-1);
+}
+
+.btn.custom {
+    width: auto;
+    color: var(--eq-primary-button-color);
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: 1px solid var(--eq-primary-button-bg-color);
+    border-radius: var(--eq--button-border-radius);
+    text-align: center;
+    background: var(--eq-primary-button-bg-color);
+    display: inline-block;
+}
+
+.btn.custom i {
+    color: var(--eq-primary-button-color);
+}
+  
+.btn.custom:hover {
+    color: var(--eq-secondary-button-color);
+    border-color: var(--eq-secondary-button-bg-color);
+    background: var(--eq-secondary-button-bg-color) !important;
+}
+
+.btn.more {
+    border: 0;    
+    border-radius: 5rem;
+    text-transform: uppercase;
+    color: var(--eq-accordion-button-text-color);
+}
+
+.btn.more:hover {
+    color: var(--eq-accordion-button-active-text-color);
+    background-color: var(--eq-accordion-button-bg-color) !important;
+}
+
+/*-----------------------------*/
+/*  Dropdown
+/*-----------------------------*/
+.dropdown-item:focus, 
+.dropdown-item:hover {
+    color: var(--bs-text-primary);
+    background-color: var(--bs-btn-bg-color);
+}
+
+.dropdown-menu {
+    border: 0;
+    box-shadow: var(--bs-menu-dropdown-box-shadow);
+    border-radius: 0.375rem;
+    will-change: transform;
+    background-color: var(--bs-menu-dropdown-bg-color);
+    animation: menu-sub-dropdown-animation-fade-in .3s ease 1,menu-sub-dropdown-animation-move-up .3s ease 1;
+}
+
+.dropdown-menu[data-bs-popper] {
+    --bs-dropdown-spacer:0;
+}
+
+.dropdown-item.active {
+    color: var(--bs-dropdown-active-color);
+    background-color: var(--bs-dropdown-active-bg);
+}
+
+.menu-rounded .menu-link {
+    border-radius: 0.375rem;
+}
+
+
+
+
+
+
+
+/*-----------------------------*/
+/*  User Image
+/*-----------------------------*/
+.symbol img {
+    display: inline-block;
+    border-radius: 50%;
+}
+
+.symbol-35px > img {
+    width: 35px;
+    height: 35px;
+}
+
+/*-----------------------------*/
+/*  Sidebar
+/*-----------------------------*/
+.sidebar-menu {
+    overflow-y: auto;
+    flex-shrink: 0;
+    background-color: var(--bs-app-sidebar-base-bg-color);
+}
+
+.sidebar .nav-link {
+    color: var(--bs-app-sidebar-link-color);
+    font-size: 1rem;
+    font-weight: 300;
+}
+  
+.sidebar .nav-link:hover {    
+    background-color: var(--bs-app-sidebar-active-bg-color);
+}
+
+.sidebar .nav-link i {
+    color: inherit;
+    font-size: 1.2rem;
+    padding: 0 0.5rem;
+}
+
+.sidebar .nav-link.active, 
+.sidebar .nav-link.active:hover {
+    color: var(--bs-app-sidebar-active-color);
+}
+
+.sidebar .nav-link.active i {
+    color: inherit;
+}
+  
+.sidebar-heading {
+    font-size: 1rem;
+}
+
+
+
+/*-----------------------------*/
+/*  Bootstrap Fixes
+/*-----------------------------*/
+.card, 
+.accordion,
+.accordion-item,
+.accordion-item:last-of-type {
+    border: 0;
+}
+
+.card, 
+.accordion {
+    background-color: var(--bs-app-card-bg);
+    box-shadow: var(--bs-app-card-box-shadow);
+    border-radius: var(--eq-border-radius);
+}
+
+.accordion-button::after,
+.dropdown-toggle::after {
+    border: 0;
+    content: "\f282";
+    color: var(--eq-gray-color-2);
+    display: inline-block;
+    font-family: bootstrap-icons !important;
+    font-style: normal;
+    font-weight: 400 !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    vertical-align: -.125em;
+    -webkit-font-smoothing: antialiased;
+}
+
+/*-----------------------------*/
+/*  Card
+/*-----------------------------*/
+.card-info {
+    flex-grow: 1;
+}
+
+.card-info .label {
+    font-weight: 300;   
+    color: #979797;
+    margin: 0;
+}
+
+.card-info .amount {
+    font-size: 1.3rem;
+    line-height: 2.8rem;
+    margin: 0;  
+}
+
+.card .circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3.5rem;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+a:hover .amount {
+    color: var(--eq-card-amount-active-text-color);
+}
+
+/*-----------------------------*/
+/*  Main cards
+/*-----------------------------*/
+.bank .circle {
+    background-color: var(--eq-blue-1);
+}
+
+.income .circle {
+    background-color: var(--eq-green-1);
+}
+
+.expense .circle {
+    background-color: var(--eq-red-1);
+}
+
+/*-----------------------------*/
+/*  Bootstrap Accordion
+/*-----------------------------*/
+.accordion-item {
+    border-bottom: 1px solid var(--bs-border-color);
+}
+
+.accordion-item:first-of-type,
+.accordion-item:first-of-type>.accordion-header .accordion-button {
+    border-top-left-radius: var(--eq-border-radius);
+    border-top-right-radius: var(--eq-border-radius);
+}
+
+.accordion-item:last-of-type,
+.accordion-item:last-of-type>.accordion-header .accordion-button.collapsed {
+    border-bottom-right-radius: var(--eq-border-radius);
+    border-bottom-left-radius: var(--eq-border-radius);
+}
+
+.accordion-button {
+    font-weight: 500;
+}
+
+.accordion .amount {     
+    position: absolute;
+    right: 60px;
+    transform: translateY(1px);
+}
+
+.accordion-button:focus,
+.accordion-button:not(.collapsed) {
+    box-shadow: none;
+}
+
+.accordion-button:hover,
+.accordion-button:not(.collapsed) {
+    color: var(--eq-accordion-active-text-color);
+    background-color: var(--eq-accordion-active-bg-color);
+}
+
+.accordion-button::after,
+.accordion-button:not(.collapsed)::after {
+    background-image: none;
+}
+
+.accordion-body a.circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2rem;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;  
+    color: #fff;
+    font-size: 1rem;
+    background-color: var(--eq-gray-color-1);
+    cursor: pointer;
+    margin-left: 0.2rem;
+}
+
+.accordion-body a.edit {    
+    background-color: var(--eq-green-1);
+}
+
+.accordion-body a.delete {    
+    background-color: var(--eq-red-1);
+}
+
+.accordion-body a.circle:hover {    
+    background-color: var(--eq-blue-2);
+}
+
+.accordion-income {
+    border-left: 2px solid var(--eq-green-1);
+}
+
+.accordion-income .amount {
+    color: var(--eq-green-1);
+}
+
+.accordion-expense {
+    border-left: 2px solid var(--eq-red-1);
+}
+
+.accordion-expense .amount {
+    color: var(--eq-red-1);
+}
+
+/*-----------------------------*/
+/*  Balance
+/*-----------------------------*/
+.balance {
+    font-weight: 500;
+}
+
+.balance .incomes .amount {
+    color: var(--eq-green-1);
+}
+
+.balance .expenses .amount {
+    color: var(--eq-red-1);
+}
+
+.balance .chart div {
+    width: 1.5rem;    
+    border-radius: 0.2rem;
+}
+
+.balance .chart .incomes {
+    height: 85%;
+    background-color: var(--eq-green-1);
+}
+
+.balance .chart .expenses {
+    height: 30%;
+    background-color: var(--eq-red-1);
+}
+
+/*-----------------------------*/
+/*  Despenses By Category
+/*-----------------------------*/
+.despenses-category {
+    font-weight: 500;
+}
+
+.despenses-category span {
+    color: var(--eq-gray-color-2);
+}
+
+.marker {
+  position: relative;
+  padding-left: 20px;
+}
+
+.marker::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.marker-food::before {
+  background-color: #7c3aed;
+}
+
+.marker-education::before {
+  background-color: #36a2eb; 
+}
+
+.marker-leisure::before {
+  background-color: #ffcd56; 
+}
+
+.marker-shopping::before {
+  background-color: #ff6384; 
+}
+
+
+
+
+
+
+
+
+/*-----------------------------*/
+/*  Footer
+/*-----------------------------*/
+.app-footer {
+    min-height: 60px;
+    background-color: var(--bs-app-footer-base-bg-color);
+    margin-top: auto;
+}
+
+/*-----------------------------*/
+/*  Media queries
+/*-----------------------------*/
+@media only screen and (min-width: 768px) {
+    .w-md-40px {
+        width: 40px !important;
+    }
+    .h-md-40px {
+        height: 40px !important;
+    }
+    .sidebar .offcanvas-lg {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 48px;
+    }
+    .sidebar-menu {
+        width: 250px;
+    }
+    .sidebar .nav-link, .sidebar-heading {
+        padding: 0.75rem 1rem;
+    }
+}
+  
+@media screen and (min-width: 900px) {
+    .navbar {
+        min-height: 70px;
+    }
+    .ms-lg-6 {
+        margin-left: 1.5rem !important;
+    }
+    .me-lg-6 {
+        margin-right: 1.5rem !important;
+    }
+    .symbol-lg-45px > img {
+        width: 45px;
+        height: 45px;
+    }
+    .navbar-logo {
+        padding: 0 2rem;
+    }
+ 
+}
+  
+@keyframes menu-sub-dropdown-animation-fade-in {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes menu-sub-dropdown-animation-move-up {
+    from {
+        margin-top: .75rem
+    }
+
+    to {
+        margin-top: 0
+    }
+}
+
+@keyframes menu-sub-dropdown-animation-move-down {
+    from {
+        margin-bottom: .75rem
+    }
+
+    to {
+        margin-bottom: 0
+    }
+}
