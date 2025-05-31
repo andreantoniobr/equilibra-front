@@ -1,0 +1,208 @@
+[data-bs-theme=light] {
+    /*Table head*/
+    --eq-app-table-head-color:#062A8F;
+    --eq-app-table-head-bg-color:#F9F9F9;
+    --eq-app-table-head-bg-hover-color:#F4F7FE;
+
+    /*Badges*/
+    --eq-app-badge-success-color:#3CD856;
+    --eq-app-badge-success-bg-color:#dcf9df;
+
+    --eq-app-badge-danger-color:#FA5A7D;
+    --eq-app-badge-danger-bg-color:#ffecf3;
+
+    /*Buttons*/
+    --eq-app-primary-button-color:#979797;
+    --eq-app-secondary-button-color:#062A8F;  
+    --eq-app-button-bg-color:#F5F5F5;
+
+    --eq-app-pagelink-disabled-button-color:#dee2e6;
+    --eq-app-pagelink-disabled-button-bg-color:#F9F9F9;
+}
+
+[data-bs-theme=dark] {
+    /*Table head*/
+    --eq-app-table-head-color:#A3AED0;
+    --eq-app-table-head-bg-color:#3c3f45;
+    --eq-app-table-head-bg-hover-color:#3c3f45;
+
+    /*Badges*/
+    --eq-app-badge-success-color:#00A261;
+    --eq-app-badge-success-bg-color:#1F212A;
+
+    --eq-app-badge-danger-color:#FA5A7D;
+    --eq-app-badge-danger-bg-color:#1F212A;
+    
+     /*Buttons*/
+    --eq-app-primary-button-color:#A3AED0;
+    --eq-app-secondary-button-color:#fff;  
+     --eq-app-button-bg-color:#3c3f45;  
+     
+     --eq-app-pagelink-disabled-button-color:#A3AED0;
+     --eq-app-pagelink-disabled-button-bg-color:#3c3f45;
+}
+
+.table-responsive {
+    position: relative;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.table {
+    --bs-table-bg: none;
+}
+
+table.dataTable thead > tr > th.dt-orderable-asc, 
+table.dataTable thead > tr > th.dt-orderable-desc, 
+table.dataTable thead > tr > td.dt-orderable-asc, 
+table.dataTable thead > tr > td.dt-orderable-desc {    
+    background-color: var(--eq-app-table-head-bg-color);
+}
+
+table.dataTable thead > tr > th.dt-orderable-asc:hover, 
+table.dataTable thead > tr > th.dt-orderable-desc:hover, 
+table.dataTable thead > tr > td.dt-orderable-asc:hover, 
+table.dataTable thead > tr > td.dt-orderable-desc:hover {
+    outline: 0;
+    outline-offset: 0;
+    color: var(--eq-app-table-head-color);
+    background-color: var(--eq-app-table-head-bg-hover-color);
+}
+
+table.dataTable th.dt-type-numeric, 
+table.dataTable th.dt-type-date, 
+table.dataTable td.dt-type-numeric, 
+table.dataTable td.dt-type-date {
+    text-align: left;    
+}
+
+.table>:not(caption)>*>* {
+    padding: 1rem 0.5rem;
+}
+
+table.dataTable {   
+    font-size: 0.9rem;
+}
+
+table.dataTable td {
+    padding: 0.5rem 0;
+    vertical-align: middle;
+}
+
+/*-----------------------------*/
+/*  dataTable Badges
+/*-----------------------------*/
+table.dataTable .badge-success,
+table.dataTable .badge-danger {
+    font-size: 0.7rem; 
+    font-weight: 600;
+}
+
+table.dataTable .badge-success {
+    color: var(--eq-app-badge-success-color);
+    background-color: var(--eq-app-badge-success-bg-color);    
+}
+
+table.dataTable .badge-danger {
+    color: var(--eq-app-badge-danger-color);
+    background-color: var(--eq-app-badge-danger-bg-color);  
+}
+
+/*-----------------------------*/
+/*  dataTable Inputs
+/*-----------------------------*/
+div.dt-container div.dt-search input,
+div.dt-container div.dt-length select {
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+div.dt-container div.dt-length select {
+    padding: .375rem 2.25rem .375rem .75rem;
+}
+
+/*-----------------------------*/
+/*  dataTable Page lins
+/*-----------------------------*/
+.table-responsive .page-link {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+}
+
+.table-responsive .active>.page-link, 
+.table-responsive .page-link.active {
+    background-color: #062A8F;
+    border-color: #062A8F;
+}
+
+.table-responsive .disabled>.page-link, 
+.table-responsive .page-link.disabled {
+    color: var(--eq-app-pagelink-disabled-button-color);
+    background-color: var(--eq-app-pagelink-disabled-button-bg-color);
+    border-color: var(--eq-app-pagelink-disabled-button-bg-color);    
+}
+
+.table-responsive .amount {
+    font-weight: 500;
+}
+
+/*-----------------------------*/
+/*  DataTables Btns
+/*-----------------------------*/
+.btn.btn-update,
+.btn.btn-delete {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.6rem;
+}
+
+.btn, 
+.btn i {
+    color: var(--eq-app-primary-button-color);
+}
+
+.btn:hover, 
+.btn:hover i {
+    color: var(--eq-app-secondary-button-color);
+}
+
+.btn:hover {
+    background-color: var(--eq-app-button-bg-color) !important;
+}
+
+/*-----------------------------*/
+/*  Incomes
+/*-----------------------------*/
+.table-responsive.incomes .active>.page-link, 
+.table-responsive.incomes .page-link.active {
+    color: #fff !important;
+    background-color: var(--eq-green-1);
+    border-color: var(--eq-green-1);
+}
+
+.table-responsive.incomes .amount {
+    color: var(--eq-green-1);
+}
+
+.table-responsive.incomes .page-link {
+    color: var(--eq-green-1);
+}
+
+/*-----------------------------*/
+/*  Expenses
+/*-----------------------------*/
+.table-responsive.expenses .active>.page-link, 
+.table-responsive.expenses .page-link.active {
+    color: #fff !important;
+    background-color: var(--eq-red-1);
+    border-color: var(--eq-red-1);
+}
+
+.table-responsive.expenses .amount {
+    color: var(--eq-red-1);
+}
+
+.table-responsive.expenses .page-link {
+    color: var(--eq-red-1);
+}
+

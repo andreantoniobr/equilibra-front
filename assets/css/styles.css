@@ -1,16 +1,4 @@
 :root {
-    --bs-text-gray-500: #636674;
-    --bs-text-gray-600: #979797; 
-    --bs-text-gray-700: #9A9CAE;
-    --bs-text-gray-800: #B5B7C8;
-
-    --bs-text-green-1:#17C653;
-
-    --bs-text-primary: #062A8F;
-
-    --bs-danger: #F8285A;    
-    --bs-danger-inverse: #ffffff;
-
     --eq-green-1:#3CD856;
     --eq-blue-1:#0095FF;
     --eq-blue-2:#062A8F;
@@ -19,11 +7,10 @@
     --eq-gray-color-2: #979797; 
     --eq-gray-color-3: #F5F5F5; 
     
-    --eq-border-radius: 1rem;    
-    --eq--button-border-radius:0.5rem;
-    
+    --eq-danger-inverse: #fff;
+    --eq-border-radius: 1rem;
+    --eq--button-border-radius:0.5rem;    
 }
-
 
 [data-bs-theme=light] {    
     /*Card*/
@@ -32,8 +19,7 @@
     --bs-app-card-border-color: #F1F1F4;
     
     /*Background*/
-    --li-app-bg-color: #F4F7FE;
-    --li-app-main-bg-color: #fff;
+    --eq-app-bg-color: #F4F7FE;
 
     /*Header*/
     --bs-app-header-base-bg-color: #fff;
@@ -76,9 +62,6 @@
     --eq-accordion-button-active-text-color:#062A8F;
     --eq-accordion-active-text-color:#062A8F;
     --eq-accordion-active-bg-color:#F5F5F5;
-    
-
- 
 }
 
 [data-bs-theme=dark] {
@@ -88,7 +71,7 @@
     --bs-app-card-border-color: #1E2027;
 
     /*Background*/
-    --li-app-bg-color: #0e131a;
+    --eq-app-bg-color: #0e131a;
 
     /*Header*/
     --bs-app-header-base-bg-color: #25282f;
@@ -131,8 +114,6 @@
     --eq-accordion-button-active-text-color:#0095ff;
     --eq-accordion-active-text-color:#0095ff;
     --eq-accordion-active-bg-color:#3c3f45;
-
-
 }
 
 [data-bs-theme=light] .theme-dark-show, 
@@ -142,7 +123,7 @@
 
 body {
     font-family: "Inter", sans-serif;
-    background-color: var(--li-app-bg-color);
+    background-color: var(--eq-app-bg-color);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -150,17 +131,6 @@ body {
 
 a {
     text-decoration: none;
-}
-
-.content-wrapper {
-    display: flex;
-  min-height: 100vh;
-}
-
-.right-area {
-    flex-grow: 1; 
-    display: flex;
-    flex-direction: column;
 }
 
 .offcanvas-md {
@@ -262,15 +232,16 @@ a {
 }
 
 .btn i {
-    color: var(--bs-text-gray-600);
+    color: var(--eq-gray-color-2);
 }
 
 .btn:hover{
     background-color: var(--eq-gray-color-3) !important;
 }
 
-.btn:hover, .btn:hover i {
-    color: var(--bs-text-primary);
+.btn:hover, 
+.btn:hover i {
+    color: var(--eq-blue-2);
 }
 
 .btn > i {
@@ -291,10 +262,13 @@ a {
     min-width: unset;
     margin-left: -0.6rem !important;
     margin-top: 0.6rem !important;
-    color: var(--bs-danger-inverse);
-    background-color: var(--bs-text-green-1);
+    color: var(--eq-danger-inverse);
+    background-color: var(--eq-green-1);
 }
 
+/*-----------------------------*/
+/*  Btn Custom
+/*-----------------------------*/
 .btn.custom {
     width: auto;
     color: var(--eq-primary-button-color);
@@ -310,13 +284,20 @@ a {
 .btn.custom i {
     color: var(--eq-primary-button-color);
 }
-  
-.btn.custom:hover {
+
+.btn.custom:hover, 
+.btn.custom:hover i {
     color: var(--eq-secondary-button-color);
+}
+
+.btn.custom:hover {
     border-color: var(--eq-secondary-button-bg-color);
     background: var(--eq-secondary-button-bg-color) !important;
 }
 
+/*-----------------------------*/
+/*  Btn More
+/*-----------------------------*/
 .btn.more {
     border: 0;    
     border-radius: 5rem;
@@ -330,11 +311,84 @@ a {
 }
 
 /*-----------------------------*/
+/*  Btn Light
+/*-----------------------------*/
+.btn.light {
+    width: auto;
+    color: var(--eq-blue-2);
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: 1px solid var(--bs-app-card-bg);
+    
+    text-align: center;
+    display: inline-block;
+
+    background-color: var(--bs-app-card-bg);
+    box-shadow: var(--bs-app-card-box-shadow);
+    border-radius: var(--eq--button-border-radius);
+}
+
+.btn.light i,
+.btn.light:hover, 
+.btn.light:hover i {
+    color: var(--eq-blue-2);
+}
+
+.btn.light:hover {
+    border-color: var(--eq-secondary-button-bg-color);
+    background: var(--eq-secondary-button-bg-color) !important;
+}
+
+/*-----------------------------*/
+/*  Btn Income
+/*-----------------------------*/
+.btn.light.income,
+.btn.light.income i {
+    color: var(--eq-green-1);
+}
+
+.btn.light.income:hover {
+    border-color: var(--eq-green-1);
+    background: var(--eq-green-1) !important;
+}
+
+.btn.light.income:hover, 
+.btn.light.income:hover i {
+    color: var(--bs-app-card-bg);
+}
+
+.btn.light.income.outline {
+    border-color: var(--eq-green-1);
+}
+
+/*-----------------------------*/
+/*  Btn Expense
+/*-----------------------------*/
+.btn.light.expense,
+.btn.light.expense i {
+    color: var(--eq-red-1);
+}
+
+.btn.light.expense:hover {
+    border-color: var(--eq-red-1);
+    background: var(--eq-red-1) !important;
+}
+
+.btn.light.expense:hover, 
+.btn.light.expense:hover i {
+    color: var(--bs-app-card-bg);
+}
+
+.btn.light.expense.outline {
+    border-color: var(--eq-red-1);
+}
+
+/*-----------------------------*/
 /*  Dropdown
 /*-----------------------------*/
 .dropdown-item:focus, 
 .dropdown-item:hover {
-    color: var(--bs-text-primary);
+    color: var(--eq-blue-2);
     background-color: var(--bs-btn-bg-color);
 }
 
@@ -359,12 +413,6 @@ a {
 .menu-rounded .menu-link {
     border-radius: 0.375rem;
 }
-
-
-
-
-
-
 
 /*-----------------------------*/
 /*  User Image
@@ -417,7 +465,9 @@ a {
     font-size: 1rem;
 }
 
-
+.sidebar .get-pro {
+    border-radius: var(--eq-border-radius);
+}
 
 /*-----------------------------*/
 /*  Bootstrap Fixes
@@ -467,6 +517,7 @@ a {
 
 .card-info .amount {
     font-size: 1.3rem;
+    font-weight: 500;
     line-height: 2.8rem;
     margin: 0;  
 }
@@ -662,12 +713,50 @@ a:hover .amount {
   background-color: #ff6384; 
 }
 
+/*-----------------------------*/
+/*  Bootstrap Modal
+/*-----------------------------*/
+.custom-modal-shadow .modal-content {
+  box-shadow: 0 10px 30px rgba(6, 42, 146, 0.3); /* ajuste RGBA para a cor e opacidade */
+}
 
+.modal-backdrop.show {
+  background-color: rgba(6, 42, 146, 0.7); 
+}
 
+/*-----------------------------*/
+/*  Forms
+/*-----------------------------*/
+.modal .form-select,
+.input-group input,
+.input-group .input-group-text {
+    background: none;
+    border: 0;
+    border-bottom: 1px solid var(--eq-gray-color-1);
+    border-radius: 0;
+}
 
+.form-label,
+.input-group .input-group-text {
+    color: var(--eq-gray-color-2);
+}
 
+.modal .form-select {
+    padding: 1rem;
+    background: var(--bs-btn-bg-color);
+}
 
+.income-group input,
+.income-group .input-group-text {
+    color: var(--eq-green-1);
+    border-color: var(--eq-green-1);
+}
 
+.expense-group input,
+.expense-group .input-group-text {
+    color: var(--eq-red-1);
+    border-color: var(--eq-red-1);
+}
 
 /*-----------------------------*/
 /*  Footer
@@ -699,6 +788,15 @@ a:hover .amount {
     .sidebar .nav-link, .sidebar-heading {
         padding: 0.75rem 1rem;
     }
+    .content-wrapper {
+        display: flex;
+        min-height: 100vh;
+    }
+    .right-area {
+        flex-grow: 1; 
+        display: flex;
+        flex-direction: column;
+    }
 }
   
 @media screen and (min-width: 900px) {
@@ -717,8 +815,7 @@ a:hover .amount {
     }
     .navbar-logo {
         padding: 0 2rem;
-    }
- 
+    } 
 }
   
 @keyframes menu-sub-dropdown-animation-fade-in {
