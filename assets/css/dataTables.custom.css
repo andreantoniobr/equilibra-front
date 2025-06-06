@@ -206,3 +206,33 @@ div.dt-container div.dt-length select {
     color: var(--eq-red-1);
 }
 
+/*-----------------------------*/
+/*  Reports
+/*-----------------------------*/
+table.reports td {
+    padding: 1rem 0;
+}
+
+.reports .amount.income {
+    color: var(--eq-green-1);
+}
+
+.reports .amount.expense {
+    color: var(--eq-red-1);
+}
+
+.reports .circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.3rem;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+
+    color: #fff;
+    font-size: 0.75rem;
+}
+
+.reports .amount.income .circle {
+    background-color: var(--eq-green-1);
+}

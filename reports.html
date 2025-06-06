@@ -217,10 +217,15 @@
         <div class="container-fluid p-3">
           <div class="row">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-4 mb-lg-5 border-bottom">
-              <h1 class="fs-1">Receitas</h1>
+              <h1 class="fs-1">Relatórios</h1>
               <div class="btn-toolbar mb-2 mb-md-0">
-                <a href="#" class="btn light income me-2" data-bs-toggle="modal" data-bs-target="#entryModal"><i class="bi bi-plus-lg"></i> Nova Receita</a> 
-                <a href="#" class="btn light income"><i class="bi bi-funnel"></i></a>
+                <button type="button" class="btn custom outline dropdown-toggle d-flex align-items-center gap-1 me-2">
+                  Selecionar por Categoria
+                </button>
+                <a href="#" class="btn custom me-2">
+                  <i class="bi bi-file-earmark-pdf"></i> Exportar para PDF
+                </a>                
+                <a href="#" class="btn custom"><i class="bi bi-funnel"></i></a>
               </div>
             </div>
           </div>
@@ -229,20 +234,20 @@
               <div class="card p-4 mb-4 mb-lg-0">
                 <div class="d-flex justify-content-center mb-3">
                   <div class="btn-toolbar gap-2">
-                    <button type="button" class="btn light income">
+                    <button type="button" class="btn light">
                       <i class="bi bi-chevron-left"></i>
                     </button>
-                    <button type="button" class="btn light income outline dropdown-toggle d-flex align-items-center gap-1">
+                    <button type="button" class="btn light outline dropdown-toggle d-flex align-items-center gap-1">
                       <i class="bi bi-calendar-week"></i> Maio
                     </button>
-                    <button type="button" class="btn light income">
+                    <button type="button" class="btn light">
                       <i class="bi bi-chevron-right"></i>
                     </button>                
                   </div>
                 </div>
                 <!--begin::Table-->
-                <div class="table-responsive incomes">
-                  <table class="table" id="entries">
+                <div class="table-responsive">
+                  <table class="table reports" id="reports">
                     <thead>
                       <tr>
                         <th scope="col">Data</th>
@@ -250,165 +255,92 @@
                         <th scope="col">Categoria</th>
                         <th scope="col">Valor</th>
                         <th scope="col">Status</th>
-                        <th scope="col">Ações</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
                         <td>01/05/2025</td>
                         <td>Salário Mensal</td>
-                        <td>Salário</td>
-                        <td><span class="amount">R$ 3.200,00</span></td>
+                        <td><i class="bi bi-wallet2 me-1"></i>Salário</td>
+                        <td><span class="amount income d-flex"><div class="circle me-2"><i class="bi bi-arrow-up"></i></div>R$ 3.200,00</span></td>
                         <td><div class="badge badge-success">Recebida</div></td>
-                        <td>
-                          <a href="#" class="btn btn-update" title="Editar"><i class="bi bi-pencil"></i></a>
-                          <a class="btn btn-sm btn-delete" title="Excluir" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal">
-                            <i class="bi bi-trash"></i>
-                          </a>
-                        </td>
                       </tr>
                       <tr>
                         <td>03/05/2025</td>
                         <td>Venda de bicicleta usada</td>
-                        <td>Venda de Bens</td>
-                        <td><span class="amount">R$ 750,00</span></td>
+                        <td><i class="bi bi-bag-check me-1"></i>Venda de Bens</td>
+                        <td><span class="amount income d-flex"><div class="circle me-2"><i class="bi bi-arrow-up"></i></div>R$ 750,00</span></td>
                         <td><div class="badge badge-success">Recebida</div></td>
-                        <td>
-                          <a href="#" class="btn btn-update" title="Editar"><i class="bi bi-pencil"></i></a>
-                          <a class="btn btn-sm btn-delete" title="Excluir" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal">
-                            <i class="bi bi-trash"></i>
-                          </a>
-                        </td>
                       </tr>
                       <tr>
                         <td>05/05/2025</td>
                         <td>Restituição de IRPF</td>
-                        <td>Restituição IR</td>
-                        <td><span class="amount">R$ 1.120,00</span></td>
+                        <td><i class="bi bi-arrow-repeat me-1"></i>Restituição IR</td>
+                        <td><span class="amount expense d-flex"><div class="circle me-2"><i class="bi bi-arrow-down"></i></div>R$ 1.120,00</span></td>
                         <td><div class="badge badge-danger">Não Recebida</div></td>
-                        <td>
-                          <a href="#" class="btn btn-update" title="Editar"><i class="bi bi-pencil"></i></a>
-                          <a class="btn btn-sm btn-delete" title="Excluir" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal">
-                            <i class="bi bi-trash"></i>
-                          </a>
-                        </td>
                       </tr>
                       <tr>
                         <td>06/05/2025</td>
                         <td>Projeto freelance (site)</td>
-                        <td>Freelance</td>
-                        <td><span class="amount">R$ 900,00</span></td>
+                        <td><i class="bi bi-laptop me-1"></i>Freelance</td>
+                        <td><span class="amount expense d-flex"><div class="circle me-2"><i class="bi bi-arrow-down"></i></div>R$ 900,00</span></td>
                         <td><div class="badge badge-danger">Não Recebida</div></td>
-                        <td>
-                          <a href="#" class="btn btn-update" title="Editar"><i class="bi bi-pencil"></i></a>
-                          <a class="btn btn-sm btn-delete" title="Excluir" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal">
-                            <i class="bi bi-trash"></i>
-                          </a>
-                        </td>
                       </tr>
                       <tr>
                         <td>08/05/2025</td>
                         <td>Venda de roupas</td>
-                        <td>Venda de Bens</td>
-                        <td><span class="amount">R$ 250,00</span></td>
+                        <td><i class="bi bi-shop me-1"></i>Venda de Bens</td>
+                        <td><span class="amount expense d-flex"><div class="circle me-2"><i class="bi bi-arrow-down"></i></div>R$ 250,00</span></td>
                         <td><div class="badge badge-danger">Não Recebida</div></td>
-                        <td>
-                          <a href="#" class="btn btn-update" title="Editar"><i class="bi bi-pencil"></i></a>
-                          <a class="btn btn-sm btn-delete" title="Excluir" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal">
-                            <i class="bi bi-trash"></i>
-                          </a>
-                        </td>
                       </tr>
                       <tr>
                         <td>10/05/2025</td>
                         <td>Dividendos de ações</td>
-                        <td>Investimentos</td>
-                        <td><span class="amount">R$ 320,00</span></td>
+                        <td><i class="bi bi-graph-up-arrow me-1"></i>Investimentos</td>
+                        <td><span class="amount income d-flex"><div class="circle me-2"><i class="bi bi-arrow-up"></i></div>R$ 320,00</span></td>
                         <td><div class="badge badge-success">Recebida</div></td>
-                        <td>
-                          <a href="#" class="btn btn-update" title="Editar"><i class="bi bi-pencil"></i></a>
-                          <a class="btn btn-sm btn-delete" title="Excluir" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal">
-                            <i class="bi bi-trash"></i>
-                          </a>
-                        </td>
                       </tr>
                       <tr>
                         <td>12/05/2025</td>
                         <td>Rendimentos do CDB</td>
-                        <td>Juros</td>
-                        <td><span class="amount">R$ 180,00</span></td>
+                        <td><i class="bi bi-piggy-bank me-1"></i>Juros</td>
+                        <td><span class="amount income d-flex"><div class="circle me-2"><i class="bi bi-arrow-up"></i></div>R$ 180,00</span></td>
                         <td><div class="badge badge-success">Recebida</div></td>
-                        <td>
-                          <a href="#" class="btn btn-update" title="Editar"><i class="bi bi-pencil"></i></a>
-                          <a class="btn btn-sm btn-delete" title="Excluir" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal">
-                            <i class="bi bi-trash"></i>
-                          </a>
-                        </td>
                       </tr>
                       <tr>
                         <td>13/05/2025</td>
                         <td>Aluguel de imóvel</td>
-                        <td>Aluguel</td>
-                        <td><span class="amount">R$ 1.200,00</span></td>
+                        <td><i class="bi bi-house-door me-1"></i>Aluguel</td>
+                        <td><span class="amount income d-flex"><div class="circle me-2"><i class="bi bi-arrow-up"></i></div>R$ 1.200,00</span></td>
                         <td><div class="badge badge-success">Recebida</div></td>
-                        <td>
-                          <a href="#" class="btn btn-update" title="Editar"><i class="bi bi-pencil"></i></a>
-                          <a class="btn btn-sm btn-delete" title="Excluir" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal">
-                            <i class="bi bi-trash"></i>
-                          </a>
-                        </td>
                       </tr>
                       <tr>
                         <td>14/05/2025</td>
                         <td>Cashback de cartão</td>
-                        <td>Cashback</td>
-                        <td><span class="amount">R$ 45,00</span></td>
+                        <td><i class="bi bi-credit-card me-1"></i>Cashback</td>
+                        <td><span class="amount income d-flex"><div class="circle me-2"><i class="bi bi-arrow-up"></i></div>R$ 45,00</span></td>
                         <td><div class="badge badge-success">Recebida</div></td>
-                        <td>
-                          <a href="#" class="btn btn-update" title="Editar"><i class="bi bi-pencil"></i></a>
-                          <a class="btn btn-sm btn-delete" title="Excluir" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal">
-                            <i class="bi bi-trash"></i>
-                          </a>
-                        </td>
                       </tr>
                       <tr>
                         <td>15/05/2025</td>
                         <td>Reembolso de despesa</td>
-                        <td>Reembolso</td>
-                        <td><span class="amount">R$ 300,00</span></td>
+                        <td><i class="bi bi-arrow-counterclockwise me-1"></i>Reembolso</td>
+                        <td><span class="amount expense d-flex"><div class="circle me-2"><i class="bi bi-arrow-down"></i></div>R$ 300,00</span></td>
                         <td><div class="badge badge-danger">Não Recebida</div></td>
-                        <td>
-                          <a href="#" class="btn btn-update" title="Editar"><i class="bi bi-pencil"></i></a>
-                          <a class="btn btn-sm btn-delete" title="Excluir" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal">
-                            <i class="bi bi-trash"></i>
-                          </a>
-                        </td>
                       </tr>
                       <tr>
                         <td>16/05/2025</td>
                         <td>Venda de eletrônicos</td>
-                        <td>Venda de Bens</td>
-                        <td><span class="amount">R$ 980,00</span></td>
+                        <td><i class="bi bi-phone me-1"></i>Venda de Bens</td>
+                        <td><span class="amount income d-flex"><div class="circle me-2"><i class="bi bi-arrow-up"></i></div>R$ 980,00</span></td>
                         <td><div class="badge badge-success">Recebida</div></td>
-                        <td>
-                          <a href="#" class="btn btn-update" title="Editar"><i class="bi bi-pencil"></i></a>
-                          <a class="btn btn-sm btn-delete" title="Excluir" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal">
-                            <i class="bi bi-trash"></i>
-                          </a>
-                        </td>
                       </tr>
                       <tr>
                         <td>17/05/2025</td>
                         <td>Serviço de design gráfico</td>
-                        <td>Freelance</td>
-                        <td><span class="amount">R$ 600,00</span></td>
+                        <td><i class="bi bi-brush me-1"></i>Freelance</td>
+                        <td><span class="amount expense d-flex"><div class="circle me-2"><i class="bi bi-arrow-down"></i></div>R$ 600,00</span></td>
                         <td><div class="badge badge-danger">Não Recebida</div></td>
-                        <td>
-                          <a href="#" class="btn btn-update" title="Editar"><i class="bi bi-pencil"></i></a>
-                          <a class="btn btn-sm btn-delete" title="Excluir" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal">
-                            <i class="bi bi-trash"></i>
-                          </a>
-                        </td>
                       </tr>
                     </tbody>
                   </table>
@@ -417,84 +349,6 @@
               </div>
             </div>
           </div>
-
-          <!--begin:: Entry Modal-->
-          <div class="modal fade" id="entryModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-              aria-labelledby="entryModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered custom-modal-shadow">
-              <div class="modal-content">
-                <div class="modal-header pt-5">
-                  <h5 class="modal-title" id="entryModalLabel">Nova Receita</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <form method="post" id="entryForm">
-                  <div class="modal-body">
-                    <div class="mb-4">
-                      <div class="input-group income-group">
-                        <span class="input-group-text"><i class="bi bi-calculator-fill"></i></span>
-                        <input type="number" class="form-control" id="entryAmount" name="amount" step="0.01" min="0" placeholder="R$ 0,00">
-                      </div>                      
-                    </div>
-                    <div class="mb-4">
-                      <div class="input-group">
-                        <span class="input-group-text"><i class="bi bi-file-earmark-text"></i></span>
-                        <input type="text" class="form-control" id="entryDescription" name="description" placeholder="Descrição">
-                      </div> 
-                    </div>
-                    <div class="mb-4">
-                      <div class="input-group">
-                        <span class="input-group-text"><i class="bi bi-calendar-week"></i></span>
-                        <input type="date" class="form-control" id="entryDate" name="date">
-                      </div>
-                    </div>
-                    <div class="mb-4">
-                      <label for="entryCategory" class="form-label">Categoria</label>
-                      <select class="form-select" id="entryCategory" name="category">
-                        <option value="Bonification">Salário</option>
-                        <option value="Bonification">Venda de Bens</option>
-                        <option value="Bonification">Restituição de Imposto de Renda</option>
-                        <option value="Bonification">Bonificação</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="modal-footer pb-5">
-                    <button type="button" class="btn cancel px-lg-5 me-3" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="submit" class="btn custom px-lg-5">
-                      <i class="bi bi-floppy me-2"></i> Salvar
-                    </button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-          <!--end:: Entry Modal-->
-
-
-          <!--begin:: Delete Modal-->
-          <div class="modal fade" id="confirmDeleteModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-              aria-labelledby="staticBackdropLabel" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered custom-modal-shadow">
-                  <div class="modal-content">
-                      <div class="modal-header">
-                          <h5 class="modal-title" id="confirmDeleteModalLabel">Confirmar Exclusão</h5>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal"
-                              aria-label="Fechar"></button>
-                      </div>
-                      <div class="modal-body">
-                          Tem certeza que deseja excluir <strong id="name"></strong>?
-                      </div>
-                      <div class="modal-footer">
-                          <button type="button" class="btn cancel px-lg-5 me-3" data-bs-dismiss="modal"><i class="bi bi-floppy me-2"></i> Cancelar</button>
-
-                          <form method="post" id="deleteForm">
-                              <button type="submit" class="btn danger px-lg-5"><i class="bi bi-trash"></i> Excluir</button>
-                          </form>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <!--end:: Delete Modal-->
-
         </div>
       </main>
       <!--end::Main-->
@@ -507,9 +361,6 @@
       <!--end::Footer-->
     </div>
   </div>
-
-  <!-- Custom js -->
-  <script src="assets/js/form-validator.js"></script>
 
   <!-- Bootstrap -->
   <script src="assets/js/bootstrap.bundle.min.js"></script>

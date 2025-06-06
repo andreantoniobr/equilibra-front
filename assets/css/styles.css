@@ -311,6 +311,28 @@ a {
 }
 
 /*-----------------------------*/
+/*  Btn Danger
+/*-----------------------------*/
+.btn.danger {
+    color: var(--eq-danger-inverse);
+    background-color: var(--eq-red-1) !important;
+}
+
+.btn.danger i {
+    color: var(--eq-danger-inverse);
+}
+
+.btn.danger:hover, 
+.btn.danger:hover i {
+    color: var(--eq-secondary-button-color);
+}
+
+.btn.danger:hover {
+    border-color: var(--eq-secondary-button-bg-color);
+    background: var(--eq-secondary-button-bg-color) !important;
+}
+
+/*-----------------------------*/
 /*  Btn Light
 /*-----------------------------*/
 .btn.light {
