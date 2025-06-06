@@ -214,7 +214,7 @@
       <!--end::Header-->
       <!--begin::Main-->
       <main class="px-md-4 mt-3 mb-3 mt-lg-4 mb-lg-4">
-        <div class="container-fluid p-3">
+        <div class="container-fluid p-3">          
           <div class="row">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-4 mb-lg-5 border-bottom">
               <h1 class="fs-1">Receitas</h1>
@@ -225,6 +225,7 @@
             </div>
           </div>
           <div class="row">
+            <div id="page-alerts"></div>
             <div class="col-12">
               <div class="card p-4 mb-4 mb-lg-0">
                 <div class="d-flex justify-content-center mb-3">
@@ -429,6 +430,7 @@
                 </div>
                 <form method="post" id="entryForm">
                   <div class="modal-body">
+                    <div id="modal-alerts" class="mb-4"></div>
                     <div class="mb-4">
                       <div class="input-group income-group">
                         <span class="input-group-text"><i class="bi bi-calculator-fill"></i></span>
@@ -462,7 +464,7 @@
                     <button type="submit" class="btn custom px-lg-5">
                       <i class="bi bi-floppy me-2"></i> Salvar
                     </button>
-                  </div>
+                  </div>                  
                 </form>
               </div>
             </div>
@@ -489,7 +491,7 @@
                           <form method="post" id="deleteForm">
                               <button type="submit" class="btn danger px-lg-5"><i class="bi bi-trash"></i> Excluir</button>
                           </form>
-                      </div>
+                      </div>                      
                   </div>
               </div>
           </div>
